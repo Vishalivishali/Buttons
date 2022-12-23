@@ -1,5 +1,5 @@
-import './App.scss';
 import { React, useState } from 'react';
+import './App.scss';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
 import Shapes from './data/Shapes';
