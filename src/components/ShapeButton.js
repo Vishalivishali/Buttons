@@ -8,9 +8,8 @@ const ShapeButton = ({ state, setState }) => {
 	return keys(Shapes).map((shape, key) =>
 		<button
 			key={ key }
-			onClick={ () => setState({
-				currentState: { ...currentState, shape },
-			}) }
+			onClick={ () => setState({ ...state,
+				currentState: { ...currentState, shape }}) }
 		>
 			{shape}
 		</button>);

@@ -7,9 +7,8 @@ const SizeButton = ({ config: { sizes }, state, setState }) => {
 	return keys(sizes).map((size, key) =>
 		<button
 			key={ key }
-			onClick={ () => setState({
-				currentState: { ...currentState, size },
-			}) }
+			onClick={ () => setState({ ...state,
+				currentState: { ...currentState, size }}) }
 		>
 			{size}
 		</button>);

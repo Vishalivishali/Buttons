@@ -6,9 +6,8 @@ const ColorButton = ({ config: { colors }, state, setState }) => {
 	return colors.map((color, key) =>
 		<button
 			key={ key }
-			onClick={ () => setState({
-				currentState: { ...currentState, color },
-			}) }
+			onClick={ () => setState({ ...state,
+				currentState: { ...currentState, color }}) }
 		>
 			{color}
 		</button>);

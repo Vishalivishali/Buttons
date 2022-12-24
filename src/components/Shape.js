@@ -1,9 +1,11 @@
 import React from 'react';
+import Shapes from '../data/Shapes';
 
 const Shape = (context) => {
-	const { data: { color, shape, size }} = context;
+	const { data: { type }} = context;
+	const Component = Shapes[type];
 
-	return <div>{color}{shape}{size}</div>;
+	return <Component { ...context }/>;
 };
 
 export default Shape;

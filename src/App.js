@@ -9,14 +9,14 @@ import Shapes from './data/Shapes';
 const App = (context) => {
 	const [state, setState] = useState({
 		currentState: {
-			color: 'red',
+			color: 'purple',
 			shape: 'circle',
 			size: 'medium',
 		},
 		shapes: [{
 			type: 'circle',
-			size: 'medium',
-			color: 'orange',
+			size: 'large',
+			color: 'violet',
 		},
 		{
 			type: 'square',
@@ -24,14 +24,18 @@ const App = (context) => {
 			color: 'skyblue',
 		}],
 	});
+
 	const extendedContext = { ...{ ...context, state, setState }};
 	const ShapeStructures = Shapes[state.currentState.shape];
 
 	return <div className="App">
 		<Buttons { ...extendedContext }/>
 		<Display { ...extendedContext }/>
-		<ShapeStructures { ...extendedContext }/>
-		<Shape { ...{ ...extendedContext, data: state.currentState } }/>
+		<ShapeStructures { ...{ ...extendedContext,
+			data: state.currentState } }
+		/>
+		{state.shapes.map((shape, key) =>
+			<Shape key={ key } { ...{ ...extendedContext, data: shape } }/>)}
 	</div>;
 };
 

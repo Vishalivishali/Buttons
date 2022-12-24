@@ -1,7 +1,7 @@
 import { React } from 'react';
 
 const Circle = (context) => {
-	const { state: { currentState: { size, color }},
+	const { data: { size, color },
 		config: { sizes }} = context;
 
 	return (
