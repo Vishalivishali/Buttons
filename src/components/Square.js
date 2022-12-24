@@ -1,7 +1,7 @@
 import { React } from 'react';
 
 const Square = (context) => {
-	const { state: { size, color },
+	const { state: { currentState: { size, color }},
 		config: { sizes }} = context;
 
 	return (

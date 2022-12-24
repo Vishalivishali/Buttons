@@ -6,12 +6,14 @@ import Shapes from './data/Shapes';
 
 const App = (context) => {
 	const [state, setState] = useState({
-		color: 'purple',
-		shape: 'circle',
-		size: 'medium',
+		currentState: {
+			color: 'purple',
+			shape: 'circle',
+			size: 'medium',
+		},
 	});
 	const extendedContext = { ...{ ...context, state, setState }};
-	const ShapeStructures = Shapes[state.shape];
+	const ShapeStructures = Shapes[state.currentState.shape];
 
 	return <div className="App">
 		<Buttons { ...extendedContext }/>

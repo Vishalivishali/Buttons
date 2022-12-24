@@ -1,13 +1,17 @@
 import { React } from 'react';
 
-const ColorButton = (context) => {
-	const { setState, state, color } = context;
+const ColorButton = ({ config: { colors }, state, setState }) => {
+	const { currentState } = state;
 
-	return (
-		<button onClick={ () => setState({ ...state, color }) }>
+	return colors.map((color, key) =>
+		<button
+			key={ key }
+			onClick={ () => setState({
+				currentState: { ...currentState, color },
+			}) }
+		>
 			{color}
-		</button>
-	);
+		</button>);
 };
 
 export default ColorButton;
