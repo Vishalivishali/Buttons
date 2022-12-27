@@ -2,8 +2,8 @@ import React from 'react';
 import Shapes from '../data/Shapes';
 
 const Shape = (context) => {
-	const { data: { type }} = context;
-	const Component = Shapes[type];
+	const { data: { shape }} = context;
+	const Component = Shapes[shape];
 
 	return <Component { ...context }/>;
 };

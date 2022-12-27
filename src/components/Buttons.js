@@ -3,14 +3,16 @@ import { React } from 'react';
 import ShapeButton from './ShapeButton';
 import ColorButton from './ColorButton';
 import SizeButton from './SizeButton';
+import AddButton from './AddButtons';
 
 const Buttons = (context) => {
 	peek(context);
 	return (
-		<div>
+		<div className="buttons">
 			<div><ColorButton { ...context }/></div>
 			<div><ShapeButton { ...context }/></div>
 			<div><SizeButton { ...context }/></div>
+			<div><AddButton { ...context }/></div>
 		</div>
 	);
 };

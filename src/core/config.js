@@ -1,4 +1,5 @@
 const config = {
+	idLength: 10,
 	colors: ['red', 'blue', 'pink'],
 	sizes: {
 		small: 50,
