@@ -1,4 +1,3 @@
-import { peek } from '@laufire/utils/debug';
 import React from 'react';
 import addShape from '../services/addShape';
 
@@ -9,7 +8,7 @@ const AddButton = (context) => {
 	return (
 		<button onClick={ () =>
 			setState({
-				...state, shapes: [...shapes, peek(addShape(context))],
+				...state, shapes: [...shapes, addShape(context)],
 			}) }
 		>Add</button>
 	);

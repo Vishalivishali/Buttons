@@ -3,8 +3,8 @@ import { React, useState } from 'react';
 import './App.scss';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
-import Shape from './components/Shape';
 import ShapeComponents from './components/ShapeComponents';
+import Shape from './components/Shape';
 
 const App = (context) => {
 	const [state, setState] = useState({
@@ -14,12 +14,9 @@ const App = (context) => {
 			size: 'medium',
 		},
 		shapes: [],
-		selectedShape: {
-			color: 'purple',
-			shape: 'circle',
-			size: 'medium',
-		},
 	});
+
+	const { currentState, selectedShape } = state;
 
 	const extendedContext = { ...{ ...context, state, setState }};
 
@@ -27,15 +24,14 @@ const App = (context) => {
 		<Buttons { ...extendedContext }/>
 		<div className="orderWise">
 			<Shape { ...{ ...extendedContext,
-				data: state.currentState } }
+				data: currentState } }
 			/></div>
-		<div className="shapeStyle">
+		{ selectedShape && <div className="shapeStyle">
 			<Shape { ...{ ...extendedContext,
-				data: state.selectedShape } }
-			/></div>
-		<Display { ...extendedContext }/>
+				data: selectedShape } }
+			/></div> }
 		<ShapeComponents { ...extendedContext }/>
-
+		<Display { ...extendedContext }/>
 	</div>;
 };
 
