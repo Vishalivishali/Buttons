@@ -4,6 +4,7 @@ import './App.scss';
 import Buttons from './components/Buttons';
 import Display from './components/Display';
 import Shape from './components/Shape';
+import ShapeComponents from './components/ShapeComponents';
 
 const App = (context) => {
 	const [state, setState] = useState({
@@ -23,10 +24,9 @@ const App = (context) => {
 		<div className="orderWise">
 			<Shape { ...{ ...extendedContext,
 				data: state.currentState } }
-			/>
-		</div>
-		{state.shapes.map((shape, key) =>
-			<Shape key={ key } { ...{ ...extendedContext, data: shape } }/>)}
+			/></div>
+		<ShapeComponents { ...extendedContext }/>
+
 	</div>;
 };
 
