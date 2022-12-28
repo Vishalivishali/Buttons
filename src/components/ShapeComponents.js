@@ -1,13 +1,6 @@
 import React from 'react';
 import Shape from './Shape';
 
-const remove = (context) => {
-	const { state: { shapes }, data } = context;
-	const temp = shapes.filter((shape) => shape.id !== data.id);
-
-	return temp;
-};
-
 const ShapeComponents = (context) => {
 	const { state, setState } = context;
 	const { shapes } = state;
@@ -18,7 +11,8 @@ const ShapeComponents = (context) => {
 			onClick={ () => {
 				setState({
 					...state,
-					shapes: remove({ ...context, data: shape }),
+					selectedId: shape.id,
+					selectedShape: shape,
 				});
 			} }
 		>

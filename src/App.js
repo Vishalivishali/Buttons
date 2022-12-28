@@ -14,17 +14,26 @@ const App = (context) => {
 			size: 'medium',
 		},
 		shapes: [],
+		selectedShape: {
+			color: 'purple',
+			shape: 'circle',
+			size: 'medium',
+		},
 	});
 
 	const extendedContext = { ...{ ...context, state, setState }};
 
 	return <div className="App">
 		<Buttons { ...extendedContext }/>
-		<Display { ...extendedContext }/>
 		<div className="orderWise">
 			<Shape { ...{ ...extendedContext,
 				data: state.currentState } }
 			/></div>
+		<div className="shapeStyle">
+			<Shape { ...{ ...extendedContext,
+				data: state.selectedShape } }
+			/></div>
+		<Display { ...extendedContext }/>
 		<ShapeComponents { ...extendedContext }/>
 
 	</div>;
