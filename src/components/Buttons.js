@@ -4,6 +4,7 @@ import ShapeButton from './ShapeButton';
 import ColorButton from './ColorButton';
 import SizeButton from './SizeButton';
 import AddButton from './AddButtons';
+import DeleteButton from './DeleteButton';
 
 const Buttons = (context) => {
 	peek(context);
@@ -13,6 +14,7 @@ const Buttons = (context) => {
 			<div><ShapeButton { ...context }/></div>
 			<div><SizeButton { ...context }/></div>
 			<div><AddButton { ...context }/></div>
+			<div><DeleteButton { ...context }/></div>
 		</div>
 	);
 };

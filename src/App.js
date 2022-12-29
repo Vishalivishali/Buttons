@@ -5,20 +5,16 @@ import Buttons from './components/Buttons';
 import Display from './components/Display';
 import ShapeComponents from './components/ShapeComponents';
 import Shape from './components/Shape';
+import getCurrentState from './services/getCurrentState';
 
+const initialState = (context) => ({
+	currentState: getCurrentState(context),
+	shapes: [],
+});
 const App = (context) => {
-	const [state, setState] = useState({
-		currentState: {
-			color: 'purple',
-			shape: 'circle',
-			size: 'medium',
-		},
-		shapes: [],
-	});
-
-	const { currentState, selectedShape } = state;
-
+	const [state, setState] = useState(initialState(context));
 	const extendedContext = { ...{ ...context, state, setState }};
+	const { currentState, selectedShape } = state;
 
 	return <div className="App">
 		<Buttons { ...extendedContext }/>
