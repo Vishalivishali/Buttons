@@ -6,6 +6,7 @@ import Display from './components/Display';
 import ShapeComponents from './components/ShapeComponents';
 import Shape from './components/Shape';
 import getCurrentState from './services/getCurrentState';
+import Box from './components/Box';
 
 const initialState = (context) => ({
 	currentState: getCurrentState(context),
@@ -14,18 +15,15 @@ const initialState = (context) => ({
 const App = (context) => {
 	const [state, setState] = useState(initialState(context));
 	const extendedContext = { ...{ ...context, state, setState }};
-	const { currentState, selectedShape } = state;
+	const { selectedShape } = state;
 
 	return <div className="App">
 		<Buttons { ...extendedContext }/>
-		<div className="orderWise">
-			<Shape { ...{ ...extendedContext,
-				data: currentState } }
-			/></div>
 		{ selectedShape && <div className="shapeStyle">
 			<Shape { ...{ ...extendedContext,
 				data: selectedShape } }
 			/></div> }
+		<Box { ...extendedContext }/>
 		<ShapeComponents { ...extendedContext }/>
 		<Display { ...extendedContext }/>
 	</div>;

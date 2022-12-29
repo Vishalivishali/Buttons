@@ -5,6 +5,7 @@ import ColorButton from './ColorButton';
 import SizeButton from './SizeButton';
 import AddButton from './AddButtons';
 import DeleteButton from './DeleteButton';
+import New from './New';
 
 const Buttons = (context) => {
 	peek(context);
@@ -15,6 +16,7 @@ const Buttons = (context) => {
 			<div><SizeButton { ...context }/></div>
 			<div><AddButton { ...context }/></div>
 			<div><DeleteButton { ...context }/></div>
+			<div><New { ...context }/></div>
 		</div>
 	);
 };

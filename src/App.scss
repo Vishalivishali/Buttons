@@ -16,8 +16,8 @@
 
 .orderWise {
 	position: absolute;
-	top: 60px;
-	left: 570px;
+	top: 3px;
+	left: 3px;
 }
 
 .buttons {
@@ -30,4 +30,13 @@
 	position: absolute;
 	top: 60px;
 	left: 900px;
+}
+
+.box {
+	position: absolute;
+	top: 10%;
+	left: 45%;
+	height: 200px;
+	width: 200px;
+	border: 3px solid black;
 }
