@@ -8,18 +8,19 @@ const isSelectedShape = (context) => {
 };
 
 const ShapeComponent = (context) => {
-	const { state, setState, data: shape } = context;
+	const { state, setState, data: shape, config: { sizes }} = context;
 
 	return (
-		<div {
-			...{ className: isSelectedShape(context)
+		<div
+			{
+				...{ className: isSelectedShape(context)
 						&& 'shapeHighlight',
-			onClick: () => {
-				setState({
-					...state,
-					currentShape: shape,
-				});
-			} } }
+				onClick: () => {
+					setState({ ...state,
+						currentShape: shape		});
+				} } }
+			style={ { width: sizes[shape.size],
+				marginTop: '3%' } }
 		>
 			<Shape
 				{ ...{ ...context, data: shape } }
