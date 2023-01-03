@@ -1,4 +1,5 @@
 import React from 'react';
+import isItemSelected from '../services/isItemSelected';
 import updateShapes from '../services/updateShapes';
 
 const UpdateButton = (context) => {
@@ -6,6 +7,7 @@ const UpdateButton = (context) => {
 
 	return (
 		<button
+			disabled={ isItemSelected(context) }
 			onClick={ () => setState({ ...state,
 				shapes: updateShapes(context) }) }
 		>
