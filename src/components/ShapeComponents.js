@@ -1,34 +1,18 @@
-/* eslint-disable max-len */
+/* eslint-disable max-lines-per-function */
 import React from 'react';
-import Shape from './Shape';
-
-const isSelectedShape = (context, shape) => {
-	const { state: { currentShape }} = context;
-
-	return currentShape.id === shape.id;
-};
+import ShapeComponent from './ShapeComponent';
 
 const ShapeComponents = (context) => {
-	const { state, setState } = context;
-	const { shapes } = state;
+	const { state: { shapes }} = context;
 
-	return shapes.map((shape, key) =>
-		<div
-			key={ key }
-			{
-				...{ className: isSelectedShape(context, shape) && 'shapeHighlight',
-					onClick: () => {
-						setState({
-							...state,
-							currentShape: shape,
-						});
-					} } }
-		>
-			<Shape
+	return <div className="container">
+		{shapes.map((shape, key) =>
+			<ShapeComponent
+				key={ key }
 				{ ...{ ...context, data: shape } }
-			/>
+			/>)}
 
-		</div>);
+	</div>;
 };
 
 export default ShapeComponents;
