@@ -7,6 +7,7 @@ import AddButton from './AddButtons';
 import DeleteButton from './DeleteButton';
 import New from './New';
 import UpdateButton from './UpdateButton';
+import RandomButton from './RandomButton';
 
 const Buttons = (context) => {
 	peek(context);
@@ -19,6 +20,7 @@ const Buttons = (context) => {
 			<div><DeleteButton { ...context }/></div>
 			<div><New { ...context }/></div>
 			<div><UpdateButton { ...context }/></div>
+			<div><RandomButton { ...context }/></div>
 		</div>
 	);
 };
