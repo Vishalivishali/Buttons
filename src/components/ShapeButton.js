@@ -1,17 +1,15 @@
 import { React } from 'react';
-import Shapes from '../data/Shapes';
-import { keys } from '@laufire/utils/lib';
 
-const getBorder = (currentShape, shape) =>
-	(shape === currentShape.shape ? `2px solid ${ currentShape.color }` : ' ');
+const isActive = ({ state: { currentShape }, shape }) =>
+	shape === currentShape.shape && 'highlight';
 
-const ShapeButton = ({ state, setState }) => {
-	const { currentShape } = state;
+const ShapeButton = (context) => {
+	const { state: { currentShape }, setState, shape } = context;
+	const { state } = context;
 
-	return keys(Shapes).map((shape, key) =>
+	return (
 		<button
-			key={ key }
-			style={ { border: getBorder(currentShape, shape) } }
+			{ ...{ className: isActive(context) } }
 			onClick={ () => setState({ ...state,
 				currentShape: { ...currentShape, shape }}) }
 		>

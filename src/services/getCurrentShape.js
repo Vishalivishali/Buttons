@@ -1,11 +1,12 @@
 import { keys } from '@laufire/utils/collection';
 import { rndValue } from '@laufire/utils/random';
+import Shapes from '../data/Shapes';
 
-const getcurrentShape = ({ config: { colors, shapes, sizes }}) => (
+const getCurrentShape = ({ config: { colors, sizes }}) => (
 	{
 		color: rndValue(colors),
-		shape: rndValue(shapes),
+		shape: rndValue(keys(Shapes)),
 		size: rndValue(keys(sizes)),
 	});
 
-export default getcurrentShape;
+export default getCurrentShape;

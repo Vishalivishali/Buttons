@@ -7,7 +7,7 @@ const config = {
 		large: 150,
 		extraLarge: 200,
 	},
-	shapes: ['circle', 'square'],
+
 };
 
 export default config;

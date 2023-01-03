@@ -3,11 +3,11 @@ import { React, useState } from 'react';
 import './App.scss';
 import Buttons from './components/Buttons';
 import ShapeComponents from './components/ShapeComponents';
-import getcurrentShape from './services/getcurrentShape';
+import getCurrentShape from './services/getCurrentShape';
 import Box from './components/Box';
 
 const initialState = (context) => ({
-	currentShape: getcurrentShape(context),
+	currentShape: getCurrentShape(context),
 	shapes: [],
 });
 const App = (context) => {

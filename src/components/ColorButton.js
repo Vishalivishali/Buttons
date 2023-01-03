@@ -1,15 +1,15 @@
 import { React } from 'react';
 
-const getBorder = (currentShape, color) =>
-	(color === currentShape.color ? `2px solid ${ currentShape.color }` : '');
+const isActive = ({ state: { currentShape }, color }) =>
+	color === currentShape.color && 'highlight';
 
-const ColorButton = ({ config: { colors }, state, setState }) => {
-	const { currentShape } = state;
+const ColorButton = (context) => {
+	const { state: { currentShape }, setState, color } = context;
+	const { state } = context;
 
-	return colors.map((color, key) =>
+	return (
 		<button
-			key={ key }
-			style={ { border: getBorder(currentShape, color) } }
+			{ ...{ className: isActive(context) } }
 			onClick={ () => setState({ ...state,
 				currentShape: { ...currentShape, color }}) }
 		>
