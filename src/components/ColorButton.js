@@ -1,17 +1,17 @@
 import { React } from 'react';
 
-const getBorder = (currentState, color) =>
-	(color === currentState.color ? `2px solid ${ currentState.color }` : '');
+const getBorder = (currentShape, color) =>
+	(color === currentShape.color ? `2px solid ${ currentShape.color }` : '');
 
 const ColorButton = ({ config: { colors }, state, setState }) => {
-	const { currentState } = state;
+	const { currentShape } = state;
 
 	return colors.map((color, key) =>
 		<button
 			key={ key }
-			style={ { border: getBorder(currentState, color) } }
+			style={ { border: getBorder(currentShape, color) } }
 			onClick={ () => setState({ ...state,
-				currentState: { ...currentState, color }}) }
+				currentShape: { ...currentShape, color }}) }
 		>
 			{color}
 		</button>);

@@ -11,8 +11,7 @@ const ShapeComponents = (context) => {
 			onClick={ () => {
 				setState({
 					...state,
-					selectedId: shape.id,
-					selectedShape: shape,
+					currentShape: shape,
 				});
 			} }
 		>

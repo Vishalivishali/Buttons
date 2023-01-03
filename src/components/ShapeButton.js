@@ -2,18 +2,18 @@ import { React } from 'react';
 import Shapes from '../data/Shapes';
 import { keys } from '@laufire/utils/lib';
 
-const getBorder = (currentState, shape) =>
-	(shape === currentState.shape ? `2px solid ${ currentState.color }` : ' ');
+const getBorder = (currentShape, shape) =>
+	(shape === currentShape.shape ? `2px solid ${ currentShape.color }` : ' ');
 
 const ShapeButton = ({ state, setState }) => {
-	const { currentState } = state;
+	const { currentShape } = state;
 
 	return keys(Shapes).map((shape, key) =>
 		<button
 			key={ key }
-			style={ { border: getBorder(currentState, shape) } }
+			style={ { border: getBorder(currentShape, shape) } }
 			onClick={ () => setState({ ...state,
-				currentState: { ...currentState, shape }}) }
+				currentShape: { ...currentShape, shape }}) }
 		>
 			{shape}
 		</button>);

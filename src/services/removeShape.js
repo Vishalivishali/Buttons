@@ -1,6 +1,6 @@
 const removeShape = (context) => {
-	const { state: { shapes, selectedShape }} = context;
-	const temp = shapes.filter((shape) => shape.id !== selectedShape.id);
+	const { state: { shapes, currentShape }} = context;
+	const temp = shapes.filter((shape) => shape.id !== currentShape.id);
 
 	return temp;
 };
