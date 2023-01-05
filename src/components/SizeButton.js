@@ -1,20 +1,21 @@
 import { React } from 'react';
+import SizeButtons from './SizeButtons';
 
 const isActive = ({ state: { currentShape }, size }) =>
 	size === currentShape.size && 'highlight';
 
 const SizeButton = (context) => {
-	const { state: { currentShape }, setState, size } = context;
+	const { state: { currentShape }, setState } = context;
 	const { state } = context;
 
 	return (
-		<button
+		<select
 			{ ...{ className: isActive(context) } }
-			onClick={ () => setState({ ...state,
-				currentShape: { ...currentShape, size }}) }
+			onCharge={ (event) => setState({ ...state,
+				currentShape: { ...currentShape, size: event.target.value }}) }
 		>
-			{size}
-		</button>);
+			<SizeButtons { ...context }/>
+		</select>);
 };
 
 export default SizeButton;

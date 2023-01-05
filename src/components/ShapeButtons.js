@@ -1,14 +1,10 @@
 import React from 'react';
-import ShapeButton from './ShapeButton';
 import { keys } from '@laufire/utils/lib';
 import Shapes from '../data/Shapes';
 
-const ShapeButtons = (context) =>
+const ShapeButtons = () =>
 
 	keys(Shapes).map((shape, key) =>
-		<ShapeButton
-			key={ key }
-			{ ...{ ...context, shape } }
-		/>);
+		<option key={ key } value={ shape }>{shape}</option>);
 
 export default ShapeButtons;

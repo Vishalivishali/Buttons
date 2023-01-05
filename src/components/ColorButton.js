@@ -1,20 +1,21 @@
 import { React } from 'react';
+import ColorButtons from './ColorButtons';
 
 const isActive = ({ state: { currentShape }, color }) =>
 	color === currentShape.color && 'highlight';
 
 const ColorButton = (context) => {
-	const { state: { currentShape }, setState, color } = context;
+	const { state: { currentShape }, setState } = context;
 	const { state } = context;
 
 	return (
-		<button
+		<select
 			{ ...{ className: isActive(context) } }
-			onClick={ () => setState({ ...state,
-				currentShape: { ...currentShape, color }}) }
+			onChange={ (event) => setState({ ...state,
+				currentShape: { ...currentShape, color: event.target.value }}) }
 		>
-			{color}
-		</button>);
+			<ColorButtons { ...context }/>
+		</select>);
 };
 
 export default ColorButton;

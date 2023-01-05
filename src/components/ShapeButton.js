@@ -1,20 +1,21 @@
 import { React } from 'react';
+import ShapeButtons from './ShapeButtons';
 
 const isActive = ({ state: { currentShape }, shape }) =>
 	shape === currentShape.shape && 'highlight';
 
 const ShapeButton = (context) => {
-	const { state: { currentShape }, setState, shape } = context;
+	const { state: { currentShape }, setState } = context;
 	const { state } = context;
 
 	return (
-		<button
+		<select
 			{ ...{ className: isActive(context) } }
-			onClick={ () => setState({ ...state,
-				currentShape: { ...currentShape, shape }}) }
+			onCharge={ (event) => setState({ ...state,
+				currentShape: { ...currentShape, shape: event.target.value }}) }
 		>
-			{shape}
-		</button>);
+			<ShapeButtons { ...context }/>
+		</select>);
 };
 
 export default ShapeButton;

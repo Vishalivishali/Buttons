@@ -1,16 +1,11 @@
 import React from 'react';
-import SizeButton from './SizeButton';
 import { keys } from '@laufire/utils/lib';
 
 const SizeButtons = (context) => {
 	const { config: { sizes }} = context;
 
-	return (
-		keys(sizes).map((size, key) =>
-			<SizeButton
-				key={ key }
-				{ ...{ ...context, size } }
-			/>));
+	return keys(sizes).map((size, key) =>
+		<option key={ key } value={ size }>{size}</option>);
 };
 
 export default SizeButtons;
