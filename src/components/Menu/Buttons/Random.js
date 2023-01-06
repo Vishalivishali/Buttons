@@ -1,7 +1,7 @@
 import { rndValue } from '@laufire/utils/random';
 import React from 'react';
 
-const RandomButton = (context) => {
+const Random = (context) => {
 	const { state: { shapes }, setState, state } = context;
 
 	return (
@@ -13,4 +13,4 @@ const RandomButton = (context) => {
 		</button>);
 };
 
-export default RandomButton;
+export default Random;

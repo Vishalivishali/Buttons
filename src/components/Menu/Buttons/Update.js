@@ -1,8 +1,8 @@
 import React from 'react';
-import isItemSelected from '../services/isItemSelected';
-import updateShapes from '../services/updateShapes';
+import isItemSelected from '../../../services/isItemSelected';
+import updateShapes from '../../../services/updateShapes';
 
-const UpdateButton = (context) => {
+const Update = (context) => {
 	const { state, setState } = context;
 
 	return (
@@ -15,4 +15,4 @@ const UpdateButton = (context) => {
 		</button>);
 };
 
-export default UpdateButton;
+export default Update;

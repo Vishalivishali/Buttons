@@ -7,7 +7,11 @@ const config = {
 		large: 150,
 		extraLarge: 200,
 	},
-
+	filters: {
+		shapes: ['circle', 'square', 'any'],
+		colors: ['red', 'blue', 'pink', 'any'],
+		sizes: ['small', 'medium', 'large', 'extraLarge', 'any'],
+	},
 };
 
 export default config;

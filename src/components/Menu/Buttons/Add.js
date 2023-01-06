@@ -1,7 +1,7 @@
 import React from 'react';
-import addShape from '../services/addShape';
+import addShape from '../../../services/addShape';
 
-const AddButton = (context) => {
+const Add = (context) => {
 	const { state, setState } = context;
 	const { shapes } = state;
 
@@ -16,4 +16,4 @@ const AddButton = (context) => {
 	);
 };
 
-export default AddButton;
+export default Add;

@@ -1,5 +1,5 @@
 import React from 'react';
-import getCurrentShape from '../services/getCurrentShape';
+import getCurrentShape from '../../../services/getCurrentShape';
 
 const New = (context) => {
 	const { state, setState } = context;

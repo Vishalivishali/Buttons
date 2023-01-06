@@ -1,21 +1,21 @@
 import { React } from 'react';
-import ShapeButtons from './ShapeButtons';
+import Shape from '../Options/Shape';
 
 const isActive = ({ state: { currentShape }, shape }) =>
 	shape === currentShape.shape && 'highlight';
 
-const ShapeButton = (context) => {
+const ShapeSelector = (context) => {
 	const { state: { currentShape }, setState } = context;
 	const { state } = context;
 
 	return (
 		<select
 			{ ...{ className: isActive(context) } }
-			onCharge={ (event) => setState({ ...state,
+			onChange={ (event) => setState({ ...state,
 				currentShape: { ...currentShape, shape: event.target.value }}) }
 		>
-			<ShapeButtons { ...context }/>
+			<Shape { ...context }/>
 		</select>);
 };
 
-export default ShapeButton;
+export default ShapeSelector;
