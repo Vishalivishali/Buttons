@@ -11,7 +11,6 @@ const initialState = (context) => ({
 	currentShape: getCurrentShape(context),
 	shapes: [],
 	filteredShapes: getCurrentShape(context),
-	filterShape: [],
 });
 
 const App = (context) => {
