@@ -11,7 +11,7 @@ import Menu from './components/Menu/';
 const initialState = (context) => ({
 	currentShape: getCurrentShape(context),
 	shapes: [],
-	filteredShapes: {
+	filters: {
 		color: 'any',
 		shape: 'any',
 		size: 'any',

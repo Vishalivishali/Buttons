@@ -9,14 +9,14 @@ const Sizes = (context) => {
 
 const SizeSelector = (context) => {
 	const { state, setState } = context;
-	const { filteredShapes } = state;
+	const { filters } = state;
 
 	return (
 		<select
-			value={ filteredShapes.size }
+			value={ filters.size }
 			onChange={ (event) => setState({ ...state,
 				filteredShapes:
-		{ ...filteredShapes, size: event.target.value }}) }
+		{ ...filters, size: event.target.value }}) }
 		>
 			<Sizes { ...context }/>
 		</select>);
