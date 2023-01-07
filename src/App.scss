@@ -48,22 +48,28 @@ border: 2px solid black;
 .container {
 	border: 2px solid black;
 	width: 25%;
+	top: 10%;
 }
 
 .filterShape {
 	position: absolute;
-	left: 70%;
-	top: 10%;
+	left: 0%;
+	top: 0%;
 }
 
 .filterShapes {
 	position: absolute;
-	left: 70%;
-	top: 15%;
+	left: 0%;
+	top: 5%;
 }
 
 .filter {
 	position: absolute;
 	left: 85%;
 	top: 10%;
+}
+
+.dropDown {
+	position: absolute;
+	left: 0;
 }

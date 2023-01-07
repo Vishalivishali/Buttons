@@ -13,6 +13,7 @@ const SizeSelector = (context) => {
 
 	return (
 		<select
+			value={ filteredShapes.size }
 			onChange={ (event) => setState({ ...state,
 				filteredShapes:
 		{ ...filteredShapes, size: event.target.value }}) }

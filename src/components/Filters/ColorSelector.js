@@ -13,6 +13,7 @@ const ColorSelector = (context) => {
 
 	return (
 		<select
+			value={ filteredShapes.color }
 			onChange={ (event) => setState({ ...state,
 				filteredShapes:
 		{ ...filteredShapes, color: event.target.value }}) }

@@ -1,5 +1,6 @@
-import { React, useState } from 'react';
 import './App.scss';
+import { React, useState } from 'react';
+
 import Filters from './components/Filters/';
 import Buttons from './components/Menu/Buttons/Buttons';
 import Container from './components/Container';
@@ -10,7 +11,11 @@ import Menu from './components/Menu/';
 const initialState = (context) => ({
 	currentShape: getCurrentShape(context),
 	shapes: [],
-	filteredShapes: getCurrentShape(context),
+	filteredShapes: {
+		color: 'any',
+		shape: 'any',
+		size: 'any',
+	},
 });
 
 const App = (context) => {
