@@ -1,5 +1,5 @@
 import { React } from 'react';
-import Size from '../Options/Size';
+import Sizes from '../Options/Sizes';
 
 const isActive = ({ state: { currentShape }, size }) =>
 	size === currentShape.size && 'highlight';
@@ -14,7 +14,7 @@ const SizeSelector = (context) => {
 			onChange={ (event) => setState({ ...state,
 				currentShape: { ...currentShape, size: event.target.value }}) }
 		>
-			<Size { ...context }/>
+			<Sizes { ...context }/>
 		</select>);
 };
 

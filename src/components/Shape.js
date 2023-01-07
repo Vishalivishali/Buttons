@@ -1,5 +1,5 @@
 import React from 'react';
-import Shapes from '../data/Shapes';
+import Shapes from '../data/ShapesTypes';
 
 const Shape = (context) => {
 	const { data: { shape }} = context;

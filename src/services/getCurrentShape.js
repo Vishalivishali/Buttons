@@ -1,6 +1,6 @@
 import { keys } from '@laufire/utils/collection';
 import { rndValue } from '@laufire/utils/random';
-import Shapes from '../data/Shapes';
+import Shapes from '../data/ShapesTypes';
 
 const getCurrentShape = ({ config: { colors, sizes }}) => (
 	{

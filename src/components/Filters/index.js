@@ -5,9 +5,9 @@ import SizeSelector from './SizeSelector';
 
 const Filters = (context) =>
 	<div className="filterShape">
-		<ColorSelector { ...context }/>
-		<ShapeSelector { ...context }/>
-		<SizeSelector { ...context }/>
+		<label>Colors</label><ColorSelector { ...context }/>
+		<label>Shapes</label><ShapeSelector { ...context }/>
+		<label>Sizes</label><SizeSelector { ...context }/>
 	</div>;
 
 export default Filters;

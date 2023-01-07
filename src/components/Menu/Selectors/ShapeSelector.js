@@ -1,5 +1,5 @@
 import { React } from 'react';
-import Shape from '../Options/Shape';
+import Shapes from '../Options/Shapes';
 
 const isActive = ({ state: { currentShape }, shape }) =>
 	shape === currentShape.shape && 'highlight';
@@ -14,7 +14,7 @@ const ShapeSelector = (context) => {
 			onChange={ (event) => setState({ ...state,
 				currentShape: { ...currentShape, shape: event.target.value }}) }
 		>
-			<Shape { ...context }/>
+			<Shapes { ...context }/>
 		</select>);
 };
 

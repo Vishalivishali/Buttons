@@ -7,11 +7,11 @@ import Random from './Random';
 
 const Buttons = (context) =>
 	<div className="buttons">
-		<div><Add { ...context }/></div>
-		<div><Delete { ...context }/></div>
-		<div><New { ...context }/></div>
-		<div><Update { ...context }/></div>
-		<div><Random { ...context }/></div>
+		<Add { ...context }/>
+		<Delete { ...context }/>
+		<New { ...context }/>
+		<Update { ...context }/>
+		<Random { ...context }/>
 	</div>
 	;
 

@@ -3,7 +3,7 @@ import ColorSelector from './ColorSelector';
 import ShapeSelector from './ShapeSelector';
 import SizeSelector from './SizeSelector';
 const Selectors = (context) =>
-	<div>
+	<div className="button">
 		<ColorSelector { ...context }/>
 		<ShapeSelector { ...context }/>
 		<SizeSelector { ...context }/>

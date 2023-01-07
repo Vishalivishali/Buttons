@@ -1,5 +1,5 @@
 import { React } from 'react';
-import Color from '../Options/Color';
+import Colors from '../Options/Colors';
 
 const isActive = ({ state: { currentShape }, color }) =>
 	color === currentShape.color && 'highlight';
@@ -14,7 +14,7 @@ const ColorSelector = (context) => {
 			onChange={ (event) => setState({ ...state,
 				currentShape: { ...currentShape, color: event.target.value }}) }
 		>
-			<Color { ...context }/>
+			<Colors { ...context }/>
 		</select>);
 };
 
