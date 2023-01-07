@@ -1,9 +1,13 @@
 import React from 'react';
-import ColorFilterButton from './ColorFilterButton';
+import ColorSelector from './ColorSelector';
+import ShapeSelector from './ShapeSelector';
+import SizeSelector from './SizeSelector';
 
 const Filters = (context) =>
 	<div className="filterShape">
-		<ColorFilterButton { ...context }/>
+		<ColorSelector { ...context }/>
+		<ShapeSelector { ...context }/>
+		<SizeSelector { ...context }/>
 	</div>;
 
 export default Filters;
