@@ -1,6 +1,7 @@
 import React from 'react';
 import removeShape from '../../../services/removeShape';
 import isItemSelected from '../../../services/isItemSelected';
+import getCurrentShape from '../../../services/getCurrentShape';
 
 const Delete = (context) => {
 	const { state, setState } = context;
@@ -10,7 +11,9 @@ const Delete = (context) => {
 			disabled={ isItemSelected(context) }
 			onClick={ () =>
 				setState({
-					...state, shapes: removeShape(context),
+					...state,
+					currentShape: getCurrentShape(context),
+					shapes: removeShape(context),
 				}) }
 		>DELETE</button>
 	);

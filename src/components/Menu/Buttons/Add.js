@@ -9,8 +9,8 @@ const Add = (context) => {
 		<button onClick={ () =>
 			setState({
 				...state,
-				currentShape: addShape(context),
-				shapes: [...shapes, addShape(context)],
+				shapes: [...shapes,
+					addShape(context)],
 			}) }
 		>Add</button>
 	);
