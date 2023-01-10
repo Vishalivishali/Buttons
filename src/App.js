@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import './App.scss';
 import { React, useState } from 'react';
 
@@ -18,6 +19,12 @@ const initialState = (context) => ({
 const App = (context) => {
 	const [state, setState] = useState(initialState(context));
 	const extendedContext = { ...{ ...context, state, setState }};
+	const { once } = context;
+	const milliSeconds = 3000;
+
+	once(() => setInterval(() => setState((newState) => ({
+		...newState, shapes: [...newState.shapes, getCurrentShape(context)],
+	})), milliSeconds));
 
 	return <div className="App">
 
