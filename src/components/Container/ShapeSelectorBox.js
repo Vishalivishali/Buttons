@@ -1,5 +1,7 @@
 import React from 'react';
 import Shape from '../Shape';
+import unselectedShape from '../../services/unselectedShape';
+import selectedShape from '../../services/selectedShape';
 
 const isSelectedShape = (context) => {
 	const { state: { currentShape }, data: { id }} = context;
@@ -8,7 +10,7 @@ const isSelectedShape = (context) => {
 };
 
 const ShapeSelectorBox = (context) => {
-	const { state, setState, data: shape, config: { sizes }} = context;
+	const { data: shape, config: { sizes }} = context;
 
 	return (
 		<div
@@ -16,8 +18,9 @@ const ShapeSelectorBox = (context) => {
 				...{ className: isSelectedShape(context)
 						&& 'shapeHighlight',
 				onClick: () => {
-					setState({ ...state,
-						currentShape: shape		});
+					isSelectedShape(context)
+						? unselectedShape(context)
+						: selectedShape(context);
 				} } }
 			style={ { width: sizes[shape.size],
 				marginTop: '3%' } }
