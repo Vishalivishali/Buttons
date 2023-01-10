@@ -23,7 +23,9 @@ const App = (context) => {
 	const milliSeconds = 3000;
 
 	once(() => setInterval(() => setState((newState) => ({
-		...newState, shapes: [...newState.shapes, getCurrentShape(context)],
+		...newState, shapes: newState.shapes.length < 5
+			? [...newState.shapes, getCurrentShape(context)]
+			: newState.shapes,
 	})), milliSeconds));
 
 	return <div className="App">
