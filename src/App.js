@@ -12,9 +12,6 @@ const initialState = (context) => ({
 	currentShape: getCurrentShape(context),
 	shapes: [],
 	filters: {
-		color: 'any',
-		shape: 'any',
-		size: 'any',
 	},
 });
 
