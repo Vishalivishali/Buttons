@@ -2,7 +2,7 @@ const unselectedShape = ({ state, setState,
 	data }) => setState({
 	...state,
 	currentShape: { ...data,
-		id: '' },
+		id: null },
 });
 
 export default unselectedShape;
