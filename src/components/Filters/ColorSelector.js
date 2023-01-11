@@ -15,7 +15,7 @@ const ColorSelector = (context) => {
 		<select
 			value={ filters.color }
 			onChange={ (event) => setState({ ...state,
-				filteredShapes:
+				filters:
 		{ ...filters, color: event.target.value }}) }
 		>
 			<Colors { ...context }/>

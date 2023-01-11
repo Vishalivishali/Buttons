@@ -15,7 +15,7 @@ const ShapeSelector = (context) => {
 		<select
 			value={ filters.shape }
 			onChange={ (event) => setState({ ...state,
-				filteredShapes:
+				filters:
 		{ ...filters, shape: event.target.value }}) }
 		>
 			<Shapes { ...context }/>
