@@ -5,12 +5,12 @@ import { React, useState } from 'react';
 import Filters from './components/Filters/';
 import Buttons from './components/Menu/Buttons/Buttons';
 import Container from './components/Container';
-import getCurrentShape from './services/getCurrentShape';
+import ShapeManager from './services/shapeManager';
 import Box from './components/Box/';
 import Menu from './components/Menu/';
 
 const initialState = (context) => ({
-	currentShape: getCurrentShape(context),
+	currentShape: ShapeManager.getCurrentShape(context),
 	shapes: [],
 	filters: {
 		color: 'any',
@@ -27,7 +27,7 @@ const App = (context) => {
 
 	once(() => setInterval(() => setState((newState) => ({
 		...newState, shapes: newState.shapes.length < 5
-			? [...newState.shapes, getCurrentShape(context)]
+			? [...newState.shapes, ShapeManager.getCurrentShape(context)]
 			: newState.shapes,
 	})), milliSeconds));
 

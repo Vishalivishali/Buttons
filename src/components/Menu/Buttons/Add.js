@@ -1,6 +1,5 @@
 import React from 'react';
-import addShape from '../../../services/addShape';
-
+import ShapeManager from '../../../services/shapeManager';
 const Add = (context) => {
 	const { state, setState } = context;
 	const { shapes } = state;
@@ -10,7 +9,7 @@ const Add = (context) => {
 			setState({
 				...state,
 				shapes: [...shapes,
-					addShape(context)],
+					ShapeManager.addShape(context)],
 			}) }
 		>Add</button>
 	);

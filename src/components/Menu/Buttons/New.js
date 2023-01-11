@@ -1,13 +1,12 @@
 import React from 'react';
-import getCurrentShape from '../../../services/getCurrentShape';
-
+import ShapeManager from '../../../services/shapeManager';
 const New = (context) => {
 	const { state, setState } = context;
 
 	return (
 		<button
 			onClick={ () => setState({ ...state,
-				currentShape: getCurrentShape(context) }) }
+				currentShape: ShapeManager.getCurrentShape(context) }) }
 		>
 			NEW
 		</button>);

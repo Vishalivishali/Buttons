@@ -1,7 +1,6 @@
 import React from 'react';
 import Shape from '../Shape';
-import unselectedShape from '../../services/unselectedShape';
-import selectedShape from '../../services/selectedShape';
+import ShapeManager from '../../services/shapeManager';
 
 const isSelectedShape = (context) => {
 	const { state: { currentShape }, data: { id }} = context;
@@ -19,8 +18,8 @@ const ShapeSelectorBox = (context) => {
 						&& 'shapeHighlight',
 				onClick: () => {
 					isSelectedShape(context)
-						? unselectedShape(context)
-						: selectedShape(context);
+						? ShapeManager.unselectedShape(context)
+						: ShapeManager.selectedShape(context);
 				} } }
 			style={ { width: sizes[shape.size],
 				marginTop: '3%' } }
