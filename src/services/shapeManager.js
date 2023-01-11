@@ -1,6 +1,6 @@
 import { keys } from '@laufire/utils/collection';
 import { rndString, rndValue } from '@laufire/utils/random';
-import Shapes from '../data/ShapesTypes';
+import ShapesTypes from '../data/ShapesTypes';
 
 const addShape = ({ state: { currentShape }, config: { idLength }}) =>
 	({ ...currentShape,
@@ -9,7 +9,7 @@ const addShape = ({ state: { currentShape }, config: { idLength }}) =>
 const getCurrentShape = ({ config: { colors, sizes, idLength }}) => (
 	{
 		color: rndValue(colors),
-		shape: rndValue(keys(Shapes)),
+		shape: rndValue(keys(ShapesTypes)),
 		size: rndValue(keys(sizes)),
 		id: rndString(idLength),
 	});

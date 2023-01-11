@@ -8,9 +8,16 @@ import Container from './components/Container';
 import ShapeManager from './services/shapeManager';
 import Box from './components/Box/';
 import Menu from './components/Menu/';
+import { rndValue } from '@laufire/utils/random';
+import { keys } from '@laufire/utils/lib';
+import ShapesTypes from './data/ShapesTypes';
 
-const initialState = (context) => ({
-	currentShape: ShapeManager.getCurrentShape(context),
+const initialState = ({ config: { colors, sizes }}) => ({
+	currentShape: {
+		color: rndValue(colors),
+		shape: rndValue(keys(ShapesTypes)),
+		size: rndValue(keys(sizes)),
+	},
 	shapes: [],
 	filters: {
 		color: 'any',
