@@ -1,7 +1,8 @@
 const unselectedShape = ({ state, setState,
-	data: { color, shape, size }}) => setState({
+	data }) => setState({
 	...state,
-	currentShape: { color, shape, size },
+	currentShape: { ...data,
+		id: '' },
 });
 
 export default unselectedShape;
