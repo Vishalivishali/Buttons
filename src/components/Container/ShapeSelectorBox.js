@@ -1,6 +1,6 @@
 import React from 'react';
 import Shape from '../Shape';
-import ShapeManager from '../../services/shapeManager';
+import ShapeManager from '../../services/ShapeManager';
 
 const isSelectedShape = (context) => {
 	const { state: { currentShape }, data: { id }} = context;

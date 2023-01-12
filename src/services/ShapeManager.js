@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import { keys } from '@laufire/utils/collection';
 import { rndString, rndValue } from '@laufire/utils/random';
 import ShapesTypes from '../data/ShapesTypes';
@@ -14,12 +15,29 @@ const getCurrentShape = ({ config: { colors, sizes, idLength }}) => (
 		id: rndString(idLength),
 	});
 
+const getShape = ({ config: { colors, sizes }}) => (
+	{
+		color: rndValue(colors),
+		shape: rndValue(keys(ShapesTypes)),
+		size: rndValue(keys(sizes)),
+	});
+
 const getFilters = (shapes, filters) =>
 	shapes.filter((shape) => Object.keys(filters).every((prop) =>
 		filters[prop] === 'any'
 		|| shape[prop] === filters[prop]));
 
 const isItemSelected = ({ state: { currentShape: { id }}}) => !id;
+
+const shapeLength = (context) => {
+	const { setState } = context;
+
+	return setInterval(() => setState((newState) => ({
+		...newState, shapes: newState.shapes.length < 5
+			? [...newState.shapes, ShapeManager.getCurrentShape(context)]
+			: newState.shapes,
+	})), 1000);
+};
 
 const removeShape = ({ state: { shapes, currentShape }}) =>
 	shapes.filter((shape) => shape.id !== currentShape.id);
@@ -47,8 +65,10 @@ const unselectedShape = ({ state, setState,
 const ShapeManager = {
 	addShape,
 	getCurrentShape,
+	getShape,
 	getFilters,
 	isItemSelected,
+	shapeLength,
 	removeShape,
 	updateShapes,
 	selectedShape,

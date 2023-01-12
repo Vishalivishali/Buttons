@@ -1,5 +1,5 @@
 import React from 'react';
-import ShapeManager from '../../../services/shapeManager';
+import ShapeManager from '../../../services/ShapeManager';
 const Update = (context) => {
 	const { state, setState } = context;
 

@@ -1,6 +1,6 @@
 /* eslint-disable max-lines-per-function */
 import React from 'react';
-import ShapeManager from '../../services/shapeManager';
+import ShapeManager from '../../services/ShapeManager';
 import ShapeSelectorBox from './ShapeSelectorBox';
 
 const Container = (context) => {
