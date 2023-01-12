@@ -29,7 +29,7 @@ const getFilters = (shapes, filters) =>
 
 const isItemSelected = ({ state: { currentShape: { id }}}) => !id;
 
-const shapeLength = (context) => {
+const autoGenShapes = (context) => {
 	const { setState } = context;
 
 	return setInterval(() => setState((newState) => ({
@@ -68,7 +68,7 @@ const ShapeManager = {
 	getRandomShape,
 	getFilters,
 	isItemSelected,
-	shapeLength,
+	autoGenShapes,
 	removeShape,
 	updateShapes,
 	selectedShape,

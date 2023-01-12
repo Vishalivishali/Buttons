@@ -8,6 +8,7 @@ import Container from './components/Container';
 import ShapeManager from './services/ShapeManager';
 import Box from './components/Box/';
 import Menu from './components/Menu/';
+import Display from './components/Display/Display';
 
 const initialState = (context) => ({
 	currentShape: ShapeManager.getRandomShape(context),
@@ -24,10 +25,10 @@ const App = (context) => {
 	const extendedContext = { ...{ ...context, state, setState }};
 	const { once } = context;
 
-	once(() => ShapeManager.shapeLength(extendedContext));
+	once(() => ShapeManager.autoGenShapes(extendedContext));
 
 	return <div className="App">
-
+		<Display { ...extendedContext }/>
 		<Buttons { ...extendedContext }/>
 		<Box { ...extendedContext }/>
 		<Container { ...extendedContext }/>
