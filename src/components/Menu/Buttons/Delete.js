@@ -9,7 +9,7 @@ const Delete = (context) => {
 			onClick={ () =>
 				setState({
 					...state,
-					currentShape: ShapeManager.getCurrentShape(context),
+					currentShape: ShapeManager.getRndShapeWithId(context),
 					shapes: ShapeManager.removeShape(context),
 				}) }
 		>DELETE</button>

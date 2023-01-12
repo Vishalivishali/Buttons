@@ -7,7 +7,7 @@ const addShape = ({ state: { currentShape }, config: { idLength }}) =>
 	({ ...currentShape,
 		id: rndString(idLength) });
 
-const getCurrentShape = ({ config: { colors, sizes, idLength }}) => (
+const getRndShapeWithId = ({ config: { colors, sizes, idLength }}) => (
 	{
 		color: rndValue(colors),
 		shape: rndValue(keys(ShapesTypes)),
@@ -15,7 +15,7 @@ const getCurrentShape = ({ config: { colors, sizes, idLength }}) => (
 		id: rndString(idLength),
 	});
 
-const getShape = ({ config: { colors, sizes }}) => (
+const getRandomShape = ({ config: { colors, sizes }}) => (
 	{
 		color: rndValue(colors),
 		shape: rndValue(keys(ShapesTypes)),
@@ -34,7 +34,7 @@ const shapeLength = (context) => {
 
 	return setInterval(() => setState((newState) => ({
 		...newState, shapes: newState.shapes.length < 5
-			? [...newState.shapes, ShapeManager.getCurrentShape(context)]
+			? [...newState.shapes, ShapeManager.getRndShapeWithId(context)]
 			: newState.shapes,
 	})), 1000);
 };
@@ -64,8 +64,8 @@ const unselectedShape = ({ state, setState,
 
 const ShapeManager = {
 	addShape,
-	getCurrentShape,
-	getShape,
+	getRndShapeWithId,
+	getRandomShape,
 	getFilters,
 	isItemSelected,
 	shapeLength,

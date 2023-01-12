@@ -10,7 +10,7 @@ import Box from './components/Box/';
 import Menu from './components/Menu/';
 
 const initialState = (context) => ({
-	currentShape: ShapeManager.getShape(context),
+	currentShape: ShapeManager.getRandomShape(context),
 	shapes: [],
 	filters: {
 		color: 'any',
